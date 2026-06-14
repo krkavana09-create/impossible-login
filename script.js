@@ -11,14 +11,17 @@ loginBtn.addEventListener('mouseover', () => {
   loginBtn.style.transform = 'none';
 });
 
+
 loginBtn.addEventListener('click', () => alert('🎉 Access Granted!'));
 
 
 refreshBtn.addEventListener('click', () => {
   document.getElementById('username').value = '';
   document.getElementById('password').value = '';
-  loginBtn.style.position = 'absolute';
-  loginBtn.style.left = '30%';
-  loginBtn.style.top = '0';
-  loginBtn.style.transform = 'translateX(-50%)';
+  
+ 
+  loginBtn.style.position = '';
+  loginBtn.style.left = '';
+  loginBtn.style.top = '';
+  loginBtn.style.transform = '';
 });
