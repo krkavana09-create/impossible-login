@@ -1,4 +1,4 @@
-* {
+ {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -34,18 +34,16 @@ input {
   color: white;
   font-size: 16px;
 }
+
+
 #button-container {
-  position: relative;
-  height: 50px;
-  margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 30px; 
+  margin-top: 30px;
+  height: 50px;
 }
 #login-btn {
-  position: absolute;
-  left: 30%;
-  transform: translateX(-50%);
   padding: 12px 30px;
   background-color: #3b82f6;
   color: white;
@@ -54,12 +52,8 @@ input {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  transition: transform 0.1s ease;
 }
 #refresh-btn {
-  position: absolute;
-  left: 70%;
-  transform: translateX(-50%);
   padding: 12px 20px;
   background-color: #475569;
   color: #cbd5e1;
