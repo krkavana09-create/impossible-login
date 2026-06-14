@@ -4,79 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Impossible Portal</title>
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-    body {
-      background: #0f172a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      color: #f8fafc;
-    }
-    .login-card {
-      background: #1e293b;
-      padding: 40px;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      border: 1px solid #334155;
-    }
-    h2 { margin-bottom: 24px; }
-    .input-group { text-align: left; margin-bottom: 20px; }
-    label { display: block; font-size: 14px; margin-bottom: 8px; color: #cbd5e1; }
-    input {
-      width: 100%;
-      padding: 12px;
-      background: #0f172a;
-      border: 1px solid #475569;
-      border-radius: 6px;
-      color: white;
-      font-size: 16px;
-    }
-    #button-container {
-      position: relative;
-      height: 50px;
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    #login-btn {
-      position: absolute;
-      left: 35%;
-      transform: translateX(-50%);
-      padding: 12px 30px;
-      background-color: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: transform 0.1s ease;
-    }
-    #refresh-btn {
-      position: absolute;
-      left: 65%;
-      transform: translateX(-50%);
-      padding: 12px 20px;
-      background-color: #475569;
-      color: #cbd5e1;
-      border: 1px solid #64748b;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -99,47 +27,6 @@
     </div>
   </div>
 
-  <script>
-    const loginBtn = document.getElementById('login-btn');
-    const refreshBtn = document.getElementById('refresh-btn');
-    let isFocused = false;
-
-    document.addEventListener('mousemove', (e) => {
-      if (isFocused) return;
-
-      const rect = loginBtn.getBoundingClientRect();
-      const btnX = rect.left + rect.width / 2;
-      const btnY = rect.top + rect.height / 2;
-      const distance = Math.hypot(e.clientX - btnX, e.clientY - btnY);
-
-      if (distance < 100) {
-        loginBtn.style.position = 'fixed';
-        const padding = 50;
-        const newX = padding + Math.random() * (window.innerWidth - rect.width - padding * 2);
-        const newY = padding + Math.random() * (window.innerHeight - rect.height - padding * 2);
-        loginBtn.style.left = `${newX}px`;
-        loginBtn.style.top = `${newY}px`;
-        loginBtn.style.transform = 'none';
-      }
-    });
-
-    loginBtn.addEventListener('focus', () => { isFocused = true; });
-    loginBtn.addEventListener('blur', () => { isFocused = false; });
-
-    loginBtn.addEventListener('click', () => {
-      alert('🎉 Access Granted! You outsmarted the form.');
-    });
-
-    refreshBtn.addEventListener('click', () => {
-      document.getElementById('username').value = '';
-      document.getElementById('password').value = '';
-      isFocused = false;
-      loginBtn.style.position = 'absolute';
-      loginBtn.style.left = '35%';
-      loginBtn.style.top = '0';
-      loginBtn.style.transform = 'translateX(-50%)';
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
